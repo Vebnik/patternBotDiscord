@@ -1,5 +1,5 @@
 const isCommand = async (inter) => {
-	return inter.isCommand() ? inter.commandName : throw 'Err interaction'
+	return inter.isCommand() ? inter.commandName : console.log('Err interaction')
 }
 
 

@@ -11,7 +11,7 @@ function StartApp () {
 	this.listenEvent = (client) => {
 		client.on('interactionCreate', inter => { listenInteraction(inter) })
 
-		client.on('messageCreate', message => {  })
+		client.on('messageCreate', message => { listenMessage(message) })
 	}
 
 }

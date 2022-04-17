@@ -2,16 +2,19 @@ const {isCommand} = require('./commandLogic.js')
 const { colorLog } = require('../system/logConsole.js')
 
 function listenInteraction (inter) {
-	isCommand(inter).then(command => {
+	isCommand(inter).then(async commandName => {
+		await inter.deferReply()
 
-		console.log(command)
+		// logic command
+		console.log(commandName, inter)
 
 	})
 }
 
 function listenMessage (msg) {
 
-	console.log(msg)
+	// listen guild msg
+	console.log(msg.content)
 
 }
 

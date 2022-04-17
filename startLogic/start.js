@@ -1,11 +1,11 @@
 const { listenInteraction, listenMessage, createLogin } = require('../command/command.js')
-const chalk = require('chalk')
+const { colorLog } = require('../system/logConsole.js')
 
 function StartApp () {
 
 	this.start = (client) => {
 		client.login(process.env.TOKEN)
-			.then(start => console.log(chalk.blue(`App started: ${new Date().toISOString()}`)))
+			.then(start => colorLog.red(`App started ⏲ ${new Date().toISOString()}`))
 			.catch(err => console.error)
 	}
 
